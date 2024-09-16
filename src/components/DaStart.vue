@@ -1,7 +1,7 @@
 <template>
-  <section class="text-center pt-96 pb-32">
+  <section id="start" class="text-center pt-96 pb-32">
     <h1 class="hello font-black text-secondary leading-4 animate-fadeIn">Hallo, ich bin</h1>
-    <h1 class="damian mb-8 font-black animate-fadeIn">Damian</h1>
+    <h1 class="damian my-4 font-black animate-fadeIn">Damian</h1>
     <a href="#kontakt" class="btn animate-fadeIn">Kontakt</a>
   </section>
 </template>
