@@ -1,18 +1,18 @@
 <template>
-  <DaSection title="Projekte" id="projekte">
+  <section id="projekte" class="py-16">
+    <h1 class="font-bold text-xl mb-8">Projekte</h1>
     <ul class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <li v-for="project in projects" :key="project.link">
         <DaProject :project="project" />
       </li>
     </ul>
-  </DaSection>
+  </section>
 </template>
 <script lang="ts" setup>
 import type { Project } from '@/model/project.model'
 import { defineAsyncComponent } from 'vue'
 
 const DaProject = defineAsyncComponent(() => import('./DaProject.vue'))
-const DaSection = defineAsyncComponent(() => import('./DaSection.vue'))
 
 const projects: Project[] = [
   {
