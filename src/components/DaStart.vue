@@ -1,13 +1,17 @@
 <template>
   <section id="start" class="pt-96 pb-32">
-    <h1 class="hello font-black text-secondary leading-4 animate-fadeIn">Hallo, ich bin</h1>
-    <h1 class="damian my-4 font-black animate-fadeIn">Damian</h1>
-    <a href="#kontakt" class="btn animate-fadeIn">
-      <div class="flex gap-2">
-        <span>Kontakt</span>
-        <ArrowDownIcon />
-      </div>
-    </a>
+    <h1 class="hello font-black text-secondary leading-4 animate-fade-in-left-fast">
+      Hallo, ich bin
+    </h1>
+    <h1 class="damian my-4 font-black animate-fade-in-left-mid">Damian</h1>
+    <div class="w-full animate-fade-in-left-slow">
+      <a href="#kontakt" class="btn">
+        <div class="flex gap-2">
+          <span>Kontakt</span>
+          <ArrowDownIcon />
+        </div>
+      </a>
+    </div>
   </section>
 </template>
 <script lang="ts" setup>

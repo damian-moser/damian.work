@@ -1,11 +1,11 @@
 <template>
   <section class="blurring fixed top-0 left-0 w-screen h-12 z-10"></section>
   <header
-    class="w-[calc(100%-4rem)] max-w-size fixed top-4 z-10 bg-white rounded-[2rem] py-2 px-4 transition-all duration-300 flex items-center justify-between border border-border"
+    class="w-[calc(100%-4rem)] animate-fade-in-top-slow max-w-size fixed top-4 z-10 bg-white rounded-[2rem] py-2 px-4 transition-all duration-300 flex items-center justify-between border border-border"
   >
     <a
       href="https://damian.work"
-      class="font-logo font-[900] text-primary text-3xl transition-colors duration-300 hover:text-primary-hover"
+      class="font-logo font-[900] text-primary text-3xl select-none transition-colors duration-300 hover:text-primary-hover"
       >D</a
     >
 

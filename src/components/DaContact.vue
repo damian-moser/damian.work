@@ -3,29 +3,29 @@
     <div class="p-8 bg-white rounded-[2rem] border border-border">
       <div class="flex justify-between">
         <section>
-          <h1 class="font-bold text-sm text-primary mb-4">Links</h1>
+          <h1 class="text-sm text-primary mb-4">Links</h1>
           <ul class="flex flex-col gap-4">
-            <a href="#start" class="font-bold text-2xl">
+            <a href="#start" class="font-bold text-2xl hover-text">
               <li>Start</li>
             </a>
-            <a href="#projekte" class="font-bold text-2xl">
+            <a href="#projekte" class="font-bold text-2xl hover-text">
               <li>Projekte</li>
             </a>
-            <a href="#kontakt" class="font-bold text-2xl">
+            <a href="#kontakt" class="font-bold text-2xl hover-text">
               <li>Kontakt</li>
             </a>
           </ul>
         </section>
 
         <section>
-          <h1 class="font-bold text-sm text-primary mb-4">Kontakt</h1>
+          <h1 class="text-sm text-primary mb-4">Kontakt</h1>
           <div class="flex flex-col gap-4">
             <div class="flex gap-4">
-              <DaInput v-model="string" placeholder="Vorname" />
-              <DaInput v-model="string" placeholder="Nachname" />
+              <DaInput v-model="forename" placeholder="Vorname" />
+              <DaInput v-model="surname" placeholder="Nachname" />
             </div>
-            <DaInput v-model="string" type="email" placeholder="E-Mail Adresse" />
-            <DaTextarea v-model="string" :rows="8" placeholder="Nachricht" />
+            <DaInput v-model="email" type="email" placeholder="E-Mail Adresse" />
+            <DaTextarea v-model="message" :rows="8" placeholder="Nachricht" />
             <button class="btn">
               <div class="flex items-center justify-center gap-2">
                 <span>Abschicken</span>
@@ -62,5 +62,8 @@ const DaInput = defineAsyncComponent(() => import('./DaInput.vue'))
 const DaTextarea = defineAsyncComponent(() => import('./DaTextarea.vue'))
 const LetterIcon = defineAsyncComponent(() => import('./LetterIcon.vue'))
 
-const string = defineModel<string>()
+const forename = defineModel<string>('forename')
+const surname = defineModel<string>('surname')
+const email = defineModel<string>('email')
+const message = defineModel<string>('message')
 </script>

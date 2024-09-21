@@ -24,6 +24,7 @@ export default {
         'input-hover': '#fafafa',
         popup: '#00000052',
         'font-primary': '#202020',
+        'font-primary-hover': '#666666',
         'font-secondary': '#ffffff'
       },
       maxWidth: {
@@ -39,10 +40,16 @@ export default {
         normal: '0 0 2rem rgba(0, 0, 0, 0.35)'
       },
       animation: {
-        fadeIn: 'fadeIn 1s ease-out forwards'
+        'fade-in-top-slow': 'fadeInTop 1s ease-out forwards',
+        'fade-in-top-fast': 'fadeInTop 0.5s ease-out forwards',
+        'fade-in-left-slow': 'fadeInLeft 1.25s ease-out forwards',
+        'fade-in-left-mid': 'fadeInLeft 1s ease-out forwards',
+        'fade-in-left-fast': 'fadeInLeft 0.75s ease-out forwards',
+        'fade-in-right-slow': 'fadeInRight 1s ease-out forwards',
+        'fade-in-right-fast': 'fadeInRight 0.5s ease-out forwards'
       },
       keyframes: {
-        fadeIn: {
+        fadeInTop: {
           '0%': {
             opacity: 0,
             transform: 'translateY(-100%)'
@@ -50,6 +57,26 @@ export default {
           '100%': {
             opacity: 1,
             transform: 'translateY(0)'
+          }
+        },
+        fadeInLeft: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateX(-100%)'
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0)'
+          }
+        },
+        fadeInRight: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateX(100%)'
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0)'
           }
         }
       }
@@ -77,6 +104,14 @@ export default {
 
           '&:hover': {
             backgroundColor: theme('colors.primary-hover')
+          }
+        },
+        '.hover-text': {
+          color: theme('colors.font-primary'),
+          transition: 'color 0.3s ease',
+
+          '&:hover': {
+            color: theme('colors.font-primary-hover')
           }
         }
       })
