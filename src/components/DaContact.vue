@@ -1,6 +1,6 @@
 <template>
   <section id="kontakt" class="py-24">
-    <div class="p-8 bg-white rounded-[2rem] border border-border">
+    <div class="p-8 bg-white rounded-[2rem] border border-border animate-fade-in-right-slow">
       <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-12">
         <section>
           <h1 class="text-sm text-primary mb-4">Links</h1>
