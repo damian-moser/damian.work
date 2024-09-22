@@ -9,17 +9,37 @@
       >D
     </router-link>
 
-    <nav class="flex gap-4">
+    <nav class="flex gap-4" v-show="userStore.isLargeScreen">
       <DaHeaderNavLink label="Start" link="#start" />
       <DaHeaderNavLink label="Projekte" link="#projekte" />
       <DaHeaderNavLink label="Kontakt" link="#kontakt" />
     </nav>
+
+    <div
+      v-show="!userStore.isLargeScreen"
+      class="self-end flex flex-col flex-wrap justify-between w-8 cursor-pointer"
+      :class="{ 'mobile-active': userStore.isMobileMenuOpen && !userStore.isClosing }"
+      @click="userStore.openMobileMenu()"
+    >
+      <div
+        class="h-[5px] bg-primary rounded-[5px] my-[3px] transform-origin-left transition-all duration-500"
+      ></div>
+      <div
+        class="h-[5px] bg-primary rounded-[5px] my-[3px] transform-origin-left transition-all duration-500"
+      ></div>
+      <div
+        class="h-[5px] bg-primary rounded-[5px] my-[3px] transform-origin-left transition-all duration-500"
+      ></div>
+    </div>
   </header>
 </template>
 <script lang="ts" setup>
+import { useUserStore } from '@/stores/user.store'
 import { defineAsyncComponent } from 'vue'
 
 const DaHeaderNavLink = defineAsyncComponent(() => import('./DaHeaderNavLink.vue'))
+
+const userStore = useUserStore()
 </script>
 <style scoped>
 .blurring {
@@ -27,5 +47,23 @@ const DaHeaderNavLink = defineAsyncComponent(() => import('./DaHeaderNavLink.vue
   -webkit-backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   z-index: 10;
+}
+</style>
+<style scoped>
+.mobile-active div:first-child {
+  transform: rotate(45deg);
+}
+
+.mobile-active div:nth-child(2) {
+  transform: translateX(1rem);
+  opacity: 0;
+}
+
+.mobile-active div:last-child {
+  transform: rotate(-45deg);
+}
+
+.transform-origin-left {
+  transform-origin: left;
 }
 </style>

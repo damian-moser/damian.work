@@ -46,7 +46,9 @@ export default {
         'fade-in-left-mid': 'fadeInLeft 1s ease-out forwards',
         'fade-in-left-fast': 'fadeInLeft 0.75s ease-out forwards',
         'fade-in-right-slow': 'fadeInRight 1s ease-out forwards',
-        'fade-in-right-fast': 'fadeInRight 0.5s ease-out forwards'
+        'fade-in-right-fast': 'fadeInRight 0.5s ease-out forwards',
+        'fade-in-top-right': 'fadeInTopRight 0.75s ease-out forwards',
+        'fade-out-top-right': 'fadeOutTopRight 0.75s ease-out forwards'
       },
       keyframes: {
         fadeInTop: {
@@ -77,6 +79,26 @@ export default {
           '100%': {
             opacity: 1,
             transform: 'translateX(0)'
+          }
+        },
+        fadeInTopRight: {
+          '0%': {
+            opacity: 0,
+            transform: 'translate(100%, -100%)'
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translate(0, 0)'
+          }
+        },
+        fadeOutTopRight: {
+          '0%': {
+            opacity: 1,
+            transform: 'translate(0, 0)'
+          },
+          '100%': {
+            opacity: 0,
+            transform: 'translate(100%, -100%)'
           }
         }
       }
