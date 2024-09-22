@@ -6,13 +6,10 @@
       <DaProjects />
       <DaContact />
     </main>
-    <DaImprint
-      v-if="isImprintOpen === 'true'"
-      @close="$router.replace({ query: { isImprintOpen: 'false' } })"
-    />
+    <DaImprint v-if="isImprintOpen === 'true'" @close="$router.replace({ query: {} })" />
     <DaPrivacyPolicy
       v-if="isPrivacyPolicyOpen === 'true'"
-      @close="$router.replace({ query: { isPrivacyPolicyOpen: 'false' } })"
+      @close="$router.replace({ query: {} })"
     />
   </div>
 </template>

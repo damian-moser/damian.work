@@ -10,7 +10,7 @@
     <div class="mt-4">
       <h2 class="text-sm font-bold">Kontakt</h2>
       <a class="font-regular" href="mailto:hello@damian.work">hello@damian.work</a>
-      <p class="font-regular" href="#kontakt">damian.work#kontakt</p>
+      <p class="font-regular">damian.work/#kontakt</p>
     </div>
   </DaPopup>
 </template>

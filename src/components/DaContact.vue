@@ -1,7 +1,7 @@
 <template>
-  <section id="kontakt" class="py-16">
+  <section id="kontakt" class="py-24">
     <div class="p-8 bg-white rounded-[2rem] border border-border">
-      <div class="flex justify-between">
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-12">
         <section>
           <h1 class="text-sm text-primary mb-4">Links</h1>
           <ul class="flex flex-col gap-4">
@@ -35,22 +35,23 @@
           </div>
         </section>
       </div>
-      <div class="flex justify-between mt-4">
-        <div class="flex gap-4">
-          <p
-            class="font-bold cursor-pointer text-sm text-primary"
+      <div class="flex justify-between flex-wrap gap-4 mt-8 md:mt-4">
+        <div class="flex gap-2">
+          <small
+            class="font-bold text-xs cursor-pointer text-primary hover:text-primary-hover transition-colors duration-300"
             @click="$router.replace({ query: { isImprintOpen: 'true' } })"
           >
             Impressum
-          </p>
-          <p
-            class="font-bold cursor-pointer text-sm text-primary"
+          </small>
+          <small class="font-bold text-xs select-none text-primary">|</small>
+          <small
+            class="font-bold text-xs cursor-pointer text-primary hover:text-primary-hover transition-colors duration-300"
             @click="$router.replace({ query: { isPrivacyPolicyOpen: 'true' } })"
           >
             Datenschutzerklärung
-          </p>
+          </small>
         </div>
-        <small class="font-bold text-primary">2024 - Damian Moser</small>
+        <small class="font-bold text-xs text-primary">&copy;2024 by Damian</small>
       </div>
     </div>
   </section>

@@ -3,14 +3,14 @@
   <header
     class="w-[calc(100%-4rem)] animate-fade-in-top-slow max-w-size fixed top-4 z-10 bg-white rounded-[2rem] py-2 px-4 transition-all duration-300 flex items-center justify-between border border-border"
   >
-    <a
-      href="https://damian.work"
+    <router-link
+      :to="{ path: '/' }"
       class="font-logo font-[900] text-primary text-3xl select-none transition-colors duration-300 hover:text-primary-hover"
-      >D</a
-    >
+      >D
+    </router-link>
 
     <nav class="flex gap-4">
-      <DaHeaderNavLink label="Start" link="#start" :active="true" />
+      <DaHeaderNavLink label="Start" link="#start" />
       <DaHeaderNavLink label="Projekte" link="#projekte" />
       <DaHeaderNavLink label="Kontakt" link="#kontakt" />
     </nav>
