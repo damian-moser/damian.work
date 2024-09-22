@@ -2,6 +2,7 @@
   <section class="blurring fixed top-0 left-0 w-screen h-12 z-10"></section>
   <header
     class="w-[calc(100%-4rem)] animate-fade-in-top-slow max-w-size fixed top-4 z-10 bg-white rounded-[2rem] py-2 px-4 transition-all duration-300 flex items-center justify-between border border-border"
+    :class="{ 'py-4': !userStore.isLargeScreen }"
   >
     <router-link
       :to="{ path: '/' }"
@@ -10,9 +11,9 @@
     </router-link>
 
     <nav class="flex gap-4" v-show="userStore.isLargeScreen">
-      <DaHeaderNavLink label="Start" link="#start" />
-      <DaHeaderNavLink label="Projekte" link="#projekte" />
-      <DaHeaderNavLink label="Kontakt" link="#kontakt" />
+      <DaHeaderNavLink label="Start" hash="#start" />
+      <DaHeaderNavLink label="Projekte" hash="#projekte" />
+      <DaHeaderNavLink label="Kontakt" hash="#kontakt" />
     </nav>
 
     <div

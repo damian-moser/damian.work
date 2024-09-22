@@ -14,8 +14,11 @@
   </div>
   <div
     v-if="userStore.isMobileMenuOpen"
-    class="fixed z-50 top-0 right-0 w-screen h-screen bg-primary animate-fade-in-top-right"
-    :class="{ 'animate-fade-out-top-right': userStore.isClosing }"
+    class="fixed z-50 top-0 right-0 w-screen h-screen bg-primary animate-fade-in-top-right transition-all duration-300"
+    :class="{
+      'animate-fade-out-top-right': userStore.isClosing,
+      'rounded-[4rem]': userStore.isOpening || userStore.isClosing
+    }"
   >
     <div class="p-12 flex flex-col">
       <div
@@ -35,21 +38,45 @@
 
       <nav class="mt-24">
         <ul class="flex flex-col gap-8 text-end">
-          <router-link :to="'/#start'">
+          <router-link
+            :to="'/#start'"
+            @click="
+              () => {
+                userStore.closeMobileMenu()
+                $router.replace({ path: '/', hash: '#start' })
+              }
+            "
+          >
             <li
               class="text-white text-5xl font-bold transition-opacity duration-300 hover:opacity-50"
             >
               Start
             </li>
           </router-link>
-          <router-link :to="'/#projekte'">
+          <router-link
+            :to="'/#projekte'"
+            @click="
+              () => {
+                userStore.closeMobileMenu()
+                $router.replace({ path: '/', hash: '#projekte' })
+              }
+            "
+          >
             <li
               class="text-white text-5xl font-bold transition-opacity duration-300 hover:opacity-50"
             >
               Projekte
             </li>
           </router-link>
-          <router-link :to="'/#kontakt'">
+          <router-link
+            :to="'/#kontakt'"
+            @click="
+              () => {
+                userStore.closeMobileMenu()
+                $router.replace({ path: '/', hash: '#kontakt' })
+              }
+            "
+          >
             <li
               class="text-white text-5xl font-bold transition-opacity duration-300 hover:opacity-50"
             >
