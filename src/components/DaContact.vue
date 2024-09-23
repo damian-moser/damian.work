@@ -26,7 +26,7 @@
             </div>
             <DaInput v-model="email" type="email" placeholder="E-Mail Adresse" />
             <DaTextarea v-model="message" :rows="8" placeholder="Nachricht" />
-            <button class="btn">
+            <button class="btn" @click="send()">
               <div class="flex items-center justify-center gap-2">
                 <span>Abschicken</span>
                 <LetterIcon />
@@ -39,14 +39,19 @@
         <div class="flex gap-2">
           <small
             class="font-bold text-xs cursor-pointer text-primary hover:text-primary-hover transition-colors duration-300"
-            @click="$router.replace({ query: { isImprintOpen: 'true' } })"
+            @click="$router.replace({ query: { isImprintOpen: 'true' }, hash: '#kontakt' })"
           >
             Impressum
           </small>
           <small class="font-bold text-xs select-none text-primary">|</small>
           <small
             class="font-bold text-xs cursor-pointer text-primary hover:text-primary-hover transition-colors duration-300"
-            @click="$router.replace({ query: { isPrivacyPolicyOpen: 'true' } })"
+            @click="
+              $router.replace({
+                query: { isPrivacyPolicyOpen: 'true' },
+                hash: '#kontakt'
+              })
+            "
           >
             Datenschutzerklärung
           </small>
@@ -58,6 +63,7 @@
 </template>
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue'
+import api from '@/api'
 
 const DaInput = defineAsyncComponent(() => import('./DaInput.vue'))
 const DaTextarea = defineAsyncComponent(() => import('./DaTextarea.vue'))
@@ -67,4 +73,10 @@ const forename = defineModel<string>('forename')
 const surname = defineModel<string>('surname')
 const email = defineModel<string>('email')
 const message = defineModel<string>('message')
+
+const send = async () => {
+  if (!forename.value || !surname.value || !email.value || !message.value) return
+
+  await api.send(forename.value, surname.value, email.value, message.value)
+}
 </script>
