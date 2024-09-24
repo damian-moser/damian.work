@@ -128,6 +128,9 @@ export default {
             backgroundColor: theme('colors.primary-hover')
           }
         },
+        '.btn-disabled': {
+          backgroundColor: theme('colors.primary-hover')
+        },
         '.hover-text': {
           color: theme('colors.font-primary'),
           transition: 'color 0.3s ease',

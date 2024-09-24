@@ -6,6 +6,7 @@
       <div class="flex justify-between items-center mb-4">
         <h1 class="font-bold text-xl">{{ title }}</h1>
         <span
+          v-if="showXmark"
           class="bg-[#eee] p-4 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer hover:bg-[#ddd]"
           @click="$emit('close')"
         >
@@ -24,9 +25,15 @@ import { defineAsyncComponent } from 'vue'
 
 const XmarkIcon = defineAsyncComponent(() => import('./XmarkIcon.vue'))
 
-defineProps<{
-  title: string
-}>()
+withDefaults(
+  defineProps<{
+    title: string
+    showXmark?: boolean
+  }>(),
+  {
+    showXmark: true
+  }
+)
 
 defineEmits<{
   (e: 'close'): void
