@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:8080/api/'
+const baseUrl = 'https://damian.work/api/'
 
 export default {
   send: async (forename: string, surname: string, email: string, message: string) => {
