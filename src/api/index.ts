@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'https://damian.work/api/'
+const baseUrl = import.meta.env.VITE_APP_API_HOST
 
 export default {
   send: async (forename: string, surname: string, email: string, message: string) => {
