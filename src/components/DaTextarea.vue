@@ -3,6 +3,7 @@
     <textarea
       v-model="model"
       ref="textarea"
+      :id="placeholder"
       :rows="rows"
       class="px-4 pt-5 pb-3 resize-none rounded-md w-full text-base font-regular bg-white outline outline-2 outline-bg focus:outline-primary transition-all"
       @focusin="isFocused = true"
@@ -14,6 +15,7 @@
         'text-base top-4': !isFocused && !model,
         'top-0 text-sm': isFocused || model
       }"
+      :for="placeholder"
       @click="$refs.textarea.focus()"
       >{{ placeholder }}</label
     >
