@@ -7,6 +7,15 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../pages/HomePage.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/404'
+    },
+    {
+      path: '/404',
+      name: 'notFound',
+      component: () => import('../pages/NotFoundPage.vue')
     }
   ],
   scrollBehavior(to) {
