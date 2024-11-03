@@ -10,6 +10,7 @@
         <img
           v-show="!isLoading"
           :src="imgUrl"
+          :alt="project.label"
           @load="isLoading = false"
           class="w-full h-56 max-w-full object-cover rounded-tl-lg rounded-tr-lg group-hover:scale-125 hover:scale-125 transition-transform duration-[400ms]"
         />
