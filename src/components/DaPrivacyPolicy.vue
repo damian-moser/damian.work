@@ -86,10 +86,6 @@ defineEmits<{
 
 <style scoped>
 h2 {
-  @apply text-sm font-bold;
-}
-
-p {
-  @apply font-regular;
+  @apply text-sm;
 }
 </style>

@@ -56,11 +56,11 @@ h5,
 h6,
 b,
 strong {
-  @apply font-bold text-font-primary;
+  @apply font-bold text-font-primary dark:text-font-secondary;
 }
 
 p,
 a,
 small {
-  @apply font-regular text-font-primary;
+  @apply font-regular text-font-primary dark:text-font-secondary;
 }

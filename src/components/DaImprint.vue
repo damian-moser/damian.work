@@ -1,16 +1,16 @@
 <template>
   <DaPopup title="Impressum" @close="$emit('close')">
     <div>
-      <h2 class="text-sm font-bold">Informationen</h2>
-      <p class="font-regular">Damian Moser</p>
-      <p class="font-regular">Ottisbergstrasse 33</p>
-      <p class="font-regular">3186 Düdingen</p>
-      <p class="font-regular">Schweiz</p>
+      <h2 class="text-sm">Informationen</h2>
+      <p>Damian Moser</p>
+      <p>Ottisbergstrasse 33</p>
+      <p>3186 Düdingen</p>
+      <p>Schweiz</p>
     </div>
     <div class="mt-4">
-      <h2 class="text-sm font-bold">Kontakt</h2>
-      <a class="font-regular" href="mailto:hello@damian.work">hello@damian.work</a>
-      <p class="font-regular">damian.work/#kontakt</p>
+      <h2 class="text-sm">Kontakt</h2>
+      <a href="mailto:hello@damian.work">hello@damian.work</a>
+      <p>damian.work/#kontakt</p>
     </div>
   </DaPopup>
 </template>

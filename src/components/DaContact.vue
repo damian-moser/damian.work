@@ -1,6 +1,8 @@
 <template>
   <section id="kontakt" class="py-24">
-    <div class="p-8 bg-white rounded-[2rem] border border-border animate-fade-in-right-slow">
+    <div
+      class="p-8 bg-white dark:bg-header-dark rounded-[2rem] border border-border dark:border-border-dark animate-fade-in-right-slow"
+    >
       <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-12">
         <section>
           <h1 class="text-sm text-primary mb-4">Links</h1>
@@ -75,14 +77,14 @@
       <div class="flex justify-between flex-wrap gap-4 mt-8 md:mt-4">
         <div class="flex gap-2">
           <small
-            class="font-bold text-xs cursor-pointer text-primary hover:text-primary-hover transition-colors duration-300"
+            class="font-bold text-xs cursor-pointer !text-primary hover:!text-primary-hover transition-colors duration-300"
             @click="$router.replace({ query: { isImprintOpen: 'true' }, hash: '#kontakt' })"
           >
             Impressum
           </small>
-          <small class="font-bold text-xs select-none text-primary">|</small>
+          <small class="font-bold text-xs select-none !text-primary">|</small>
           <small
-            class="font-bold text-xs cursor-pointer text-primary hover:text-primary-hover transition-colors duration-300"
+            class="font-bold text-xs cursor-pointer !text-primary hover:!text-primary-hover transition-colors duration-300"
             @click="
               $router.replace({
                 query: { isPrivacyPolicyOpen: 'true' },
@@ -93,7 +95,7 @@
             Datenschutzerklärung
           </small>
         </div>
-        <small class="font-bold text-xs text-primary">&copy;2024 by Damian</small>
+        <small class="font-bold text-xs !text-primary">&copy;2024 by Damian</small>
       </div>
     </div>
     <DaPopup

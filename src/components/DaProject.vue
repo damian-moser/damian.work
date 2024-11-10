@@ -1,5 +1,5 @@
 <template>
-  <article class="rounded-lg border border-border">
+  <article class="rounded-lg border border-border dark:border-border-dark">
     <a :href="project.link" target="_blank" rel="noopener">
       <div class="group h-56 overflow-hidden rounded-tl-lg rounded-tr-lg w-full">
         <div
@@ -17,8 +17,8 @@
       </div>
     </a>
     <div class="p-4">
-      <h2 class="font-bold mb-2">{{ project.label }}</h2>
-      <small class="font-regular"
+      <h2 class="mb-2">{{ project.label }}</h2>
+      <small
         >{{ formatDate(project.startDate) }} -
         {{ formatDate(project.endDate) }}
       </small>

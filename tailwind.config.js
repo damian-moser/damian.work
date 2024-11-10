@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -14,6 +15,8 @@ export default {
       },
       colors: {
         bg: '#fafafa',
+        'bg-dark': '#1c1c1c',
+        'header-dark': '#333333',
         secondary: '#000000',
         primary: '#004fff',
         'primary-hover': '#001a4f',
@@ -34,7 +37,11 @@ export default {
         size: '1330px'
       },
       borderColor: {
-        border: '#dfdfdf'
+        border: '#dfdfdf',
+        'border-dark': '#2c2c2c'
+      },
+      outlineColor: {
+        'outline-dark': '#2c2c2c'
       },
       boxShadow: {
         normal: '0 0 2rem rgba(0, 0, 0, 0.35)'

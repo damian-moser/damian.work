@@ -3,7 +3,16 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, toRefs } from 'vue'
 import { RouterView } from 'vue-router'
+import { useUserStore } from './stores/user.store'
+
+const userStore = useUserStore()
+const { isDarkModeActive } = toRefs(userStore)
+
+onMounted(() => {
+  document.documentElement.classList.add(isDarkModeActive.value ? 'dark' : 'light')
+})
 </script>
 
 <style scoped>

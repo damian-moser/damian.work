@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@vueuse/core'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 export const useUserStore = defineStore('user', () => {
   const isMobileMenuOpen = ref<boolean>(false)
@@ -8,7 +8,15 @@ export const useUserStore = defineStore('user', () => {
   const isOpening = ref<boolean>(false)
 
   const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+  const isSmallScreen = useMediaQuery('(max-width: 640px)')
   const prefersDark = useMediaQuery('(prefers-color-scheme: dark)')
+
+  const isAfterEightAndBeforeEight = computed<boolean>(() => {
+    const hour = new Date().getHours()
+    return hour > 20 && hour < 8
+  })
+
+  const isDarkModeActive = computed(() => prefersDark || isAfterEightAndBeforeEight)
 
   const openMobileMenu = () => {
     document.body.style.overflowY = 'hidden'
@@ -32,11 +40,12 @@ export const useUserStore = defineStore('user', () => {
 
   return {
     isLargeScreen,
-    prefersDark,
     openMobileMenu,
     closeMobileMenu,
     isMobileMenuOpen,
     isClosing,
-    isOpening
+    isOpening,
+    isDarkModeActive,
+    isSmallScreen
   }
 })

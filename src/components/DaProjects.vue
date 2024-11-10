@@ -1,6 +1,6 @@
 <template>
   <section id="projekte" class="py-24">
-    <h1 class="font-bold text-xl mb-8 animate-fade-in-left-slow">Projekte</h1>
+    <h1 class="text-xl mb-8 animate-fade-in-left-slow">Projekte</h1>
     <ul class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <li
         v-for="(project, index) in projects"

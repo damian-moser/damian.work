@@ -1,5 +1,7 @@
 <template>
-  <div class="w-screen max-w-full min-h-screen flex justify-center px-8 overflow-x-hidden bg-bg">
+  <div
+    class="w-screen max-w-full min-h-screen flex justify-center px-8 overflow-x-hidden bg-bg dark:bg-bg-dark"
+  >
     <DaHeader />
     <main class="max-w-size w-size">
       <DaStart />
