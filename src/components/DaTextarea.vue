@@ -5,7 +5,7 @@
       ref="textarea"
       :id="placeholder"
       :rows="rows"
-      class="px-4 pt-5 pb-3 resize-none rounded-md w-full text-font-primary dark:text-font-secondary text-base font-regular bg-white dark:bg-bg-dark outline outline-2 outline-bg dark:outline-outline-dark focus:!outline-primary transition-all"
+      class="px-4 pt-5 pb-3 resize-none rounded-md w-full text-font-primary dark:text-font-secondary text-base font-regular bg-white dark:bg-gray-dark outline outline-2 outline-default dark:outline-default-dark focus:!outline-primary transition-all"
       @focusin="isFocused = true"
       @focusout="isFocused = false"
     ></textarea>

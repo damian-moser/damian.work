@@ -5,7 +5,7 @@
       ref="input"
       :id="placeholder"
       :type="type"
-      class="px-4 pt-5 pb-3 rounded-md w-full text-base text-font-primary dark:text-font-secondary font-regular bg-white dark:bg-bg-dark outline outline-2 outline-bg dark:outline-outline-dark focus:!outline-primary transition-all"
+      class="px-4 pt-5 pb-3 rounded-md w-full text-base text-font-primary dark:text-font-secondary font-regular bg-white dark:bg-gray-dark outline outline-2 outline-default dark:outline-default-dark focus:!outline-primary transition-all"
       @focusin="isFocused = true"
       @focusout="isFocused = false"
     />

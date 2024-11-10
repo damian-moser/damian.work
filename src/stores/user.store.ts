@@ -11,12 +11,14 @@ export const useUserStore = defineStore('user', () => {
   const isSmallScreen = useMediaQuery('(max-width: 640px)')
   const prefersDark = useMediaQuery('(prefers-color-scheme: dark)')
 
-  const isAfterEightAndBeforeEight = computed<boolean>(() => {
+  const isBetweenEightAndEight = computed<boolean>(() => {
     const hour = new Date().getHours()
-    return hour > 20 && hour < 8
+    return hour >= 8 && hour < 20
   })
 
-  const isDarkModeActive = computed(() => prefersDark || isAfterEightAndBeforeEight)
+  const isDarkModeActive = computed<boolean>(
+    () => prefersDark.value || !isBetweenEightAndEight.value
+  )
 
   const openMobileMenu = () => {
     document.body.style.overflowY = 'hidden'

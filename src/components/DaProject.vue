@@ -1,27 +1,26 @@
 <template>
-  <article class="rounded-lg border border-border dark:border-border-dark">
-    <a :href="project.link" target="_blank" rel="noopener">
-      <div class="group h-56 overflow-hidden rounded-tl-lg rounded-tr-lg w-full">
-        <div
-          v-show="isLoading"
-          class="w-full h-56 max-w-full rounded-tl-lg rounded-tr-lg bg-gray-200 animate-pulse"
-        ></div>
+  <article
+    class="relative rounded-default h-project overflow-hidden w-full hover:scale-105 transition-transform duration-300"
+  >
+    <div
+      v-show="isLoading"
+      class="w-full h-project max-w-full rounded-default bg-gray-200 animate-pulse"
+    ></div>
+    <img
+      v-show="!isLoading"
+      :src="imgUrl"
+      :alt="project.label"
+      @load="isLoading = false"
+      class="w-full h-project max-w-full object-cover rounded-default"
+    />
 
-        <img
-          v-show="!isLoading"
-          :src="imgUrl"
-          :alt="project.label"
-          @load="isLoading = false"
-          class="w-full h-56 max-w-full object-cover rounded-tl-lg rounded-tr-lg group-hover:scale-125 hover:scale-125 transition-transform duration-[400ms]"
-        />
-      </div>
-    </a>
-    <div class="p-4">
-      <h2 class="mb-2">{{ project.label }}</h2>
-      <small
-        >{{ formatDate(project.startDate) }} -
+    <div class="absolute left-6 bottom-6">
+      <p class="text-font-secondary">
+        {{ formatDate(project.startDate) }} -
         {{ formatDate(project.endDate) }}
-      </small>
+      </p>
+      <h2 class="text-xl mb-2 text-font-secondary">{{ project.label }}</h2>
+      <a :href="project.link" target="_blank" rel="noopener" class="btn">entdecken</a>
     </div>
   </article>
 </template>

@@ -24,7 +24,7 @@ const DaProject = defineAsyncComponent(() => import('./DaProject.vue'))
 
 const projects: Project[] = [
   {
-    label: 'Wachseldorn',
+    label: 'Gemeinde Wachseldorn',
     link: 'https://wachseldorn.ch',
     img: 'wachseldorn.png',
     startDate: new Date(2023, 10, 21),

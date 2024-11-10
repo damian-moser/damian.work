@@ -16,19 +16,18 @@ export default {
       colors: {
         bg: '#fafafa',
         'bg-dark': '#1c1c1c',
-        'header-dark': '#333333',
-        secondary: '#000000',
         primary: '#004fff',
         'primary-hover': '#001a4f',
-        error: '#ff0101',
-        'header-nav-hover': '#eee',
-        'header-nav': '#f5f5f5',
         input: '#eee',
         'input-hover': '#fafafa',
         popup: '#00000052',
         'font-primary': '#202020',
-        'font-primary-hover': '#666666',
-        'font-secondary': '#ffffff'
+        'font-primary-hover': '#666',
+        'font-secondary': '#fff',
+        gray: '#edeeef',
+        'gray-dark': '#333',
+        'popup-close': '#eee',
+        'popup-close-dark': '#333'
       },
       maxWidth: {
         size: '1330px'
@@ -36,15 +35,22 @@ export default {
       width: {
         size: '1330px'
       },
+      height: {
+        project: '28rem'
+      },
       borderColor: {
         border: '#dfdfdf',
         'border-dark': '#2c2c2c'
       },
       outlineColor: {
-        'outline-dark': '#2c2c2c'
+        default: '#eee',
+        'default-dark': '#2c2c2c'
       },
       boxShadow: {
         normal: '0 0 2rem rgba(0, 0, 0, 0.35)'
+      },
+      borderRadius: {
+        default: '2rem'
       },
       animation: {
         'fade-in-top-slow': 'fadeInTop 1s ease-out forwards',

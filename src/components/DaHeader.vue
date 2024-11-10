@@ -6,7 +6,7 @@
     }"
   ></section>
   <header
-    class="w-[calc(100%-4rem)] animate-fade-in-top-slow max-w-size fixed top-4 z-10 bg-white dark:bg-header-dark rounded-[2rem] py-2 px-4 transition-all duration-300 flex items-center justify-between border border-border dark:border-border-dark"
+    class="w-[calc(100%-4rem)] animate-fade-in-top-slow max-w-size fixed top-4 z-10 bg-white dark:bg-gray-dark rounded-[2rem] py-2 px-4 transition-all duration-300 flex items-center justify-between border border-border dark:border-border-dark"
     :class="{ 'py-4': !isLargeScreen }"
   >
     <router-link

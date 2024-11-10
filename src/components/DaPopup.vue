@@ -9,7 +9,7 @@
         <h1 class="font-bold text-xl">{{ title }}</h1>
         <span
           v-if="showXmark && !isSmallScreen"
-          class="bg-[#eee] dark:bg-header-dark p-4 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer hover:bg-[#ddd] dark:hover:bg-bg-dark"
+          class="bg-popup-close dark:bg-popup-close-dark p-4 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer hover:bg-[#ddd] dark:hover:bg-bg-dark"
           @click="$emit('close')"
         >
           <XmarkIcon :fill="isDarkModeActive ? '#fff' : ''" />

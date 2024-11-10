@@ -1,11 +1,9 @@
 <template>
   <section id="kontakt" class="py-24">
-    <div
-      class="p-8 bg-white dark:bg-header-dark rounded-[2rem] border border-border dark:border-border-dark animate-fade-in-right-slow"
-    >
+    <div class="p-8 bg-white dark:bg-gray-dark rounded-default animate-fade-in-right-slow">
       <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-12">
         <section>
-          <h1 class="text-sm text-primary mb-4">Links</h1>
+          <h1 class="text-sm !text-primary mb-4">Links</h1>
           <ul class="flex flex-col gap-4">
             <a href="#start" class="font-bold text-2xl hover-text">
               <li>Start</li>
@@ -20,7 +18,7 @@
         </section>
 
         <section>
-          <h1 class="text-sm text-primary mb-4">Kontakt</h1>
+          <h1 class="text-sm !text-primary mb-4">Kontakt</h1>
           <div class="flex flex-col gap-4">
             <div class="flex gap-4">
               <DaInput v-model="forename" placeholder="Vorname" />
