@@ -132,13 +132,14 @@ export default {
           userSelect: 'none',
           '-webkit-user-select': 'none',
           '-moz-user-select': 'none',
-          transition: 'background-color 0.3s ease',
+          transition: 'all 0.3s ease',
           cursor: 'pointer',
           border: 'none',
           outline: 'none',
 
           '&:hover': {
-            backgroundColor: theme('colors.primary-hover')
+            backgroundColor: theme('colors.primary-hover'),
+            transform: 'scale(1.05)'
           }
         },
         '.btn-disabled': {

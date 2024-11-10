@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     label: 'Gemeinde Wachseldorn',
     link: 'https://wachseldorn.ch',
-    img: 'wachseldorn.png',
+    img: 'wachseldorn.jpg',
     startDate: new Date(2023, 10, 21),
     endDate: new Date(2024, 1, 17)
   }

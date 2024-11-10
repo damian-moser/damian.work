@@ -20,13 +20,20 @@
         {{ formatDate(project.endDate) }}
       </p>
       <h2 class="text-xl mb-2 text-font-secondary">{{ project.label }}</h2>
-      <a :href="project.link" target="_blank" rel="noopener" class="btn">entdecken</a>
+      <a :href="project.link" target="_blank" rel="noopener" class="btn">
+        <div class="flex items-center gap-2">
+          <span>entdecken</span>
+          <ArrowRightIcon />
+        </div>
+      </a>
     </div>
   </article>
 </template>
 <script lang="ts" setup>
 import type { Project } from '@/model/project.model'
-import { ref } from 'vue'
+import { ref, defineAsyncComponent } from 'vue'
+
+const ArrowRightIcon = defineAsyncComponent(() => import('./ArrowRightIcon.vue'))
 
 const props = defineProps<{
   project: Project
