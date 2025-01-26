@@ -93,7 +93,9 @@
             Datenschutzerklärung
           </small>
         </div>
-        <small class="font-bold text-xs !text-primary">&copy;2024 by Damian</small>
+        <a href="https://damian.work" target="_blank" class="font-bold text-xs !text-primary"
+          >by damian.work</a
+        >
       </div>
     </div>
     <DaPopup
