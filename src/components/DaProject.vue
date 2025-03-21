@@ -10,10 +10,17 @@
       v-show="!isLoading"
       :src="imgUrl"
       :alt="project.label"
+      draggable="false"
       @load="isLoading = false"
       class="w-full h-project max-w-full object-cover rounded-default"
+      :class="{
+        'object-left': project.position === 'left',
+        'object-center': project.position === 'center',
+        'object-right': project.position === 'right'
+      }"
     />
 
+    <div class="absolute inset-0 bg-black bg-opacity-25"></div>
     <div class="absolute left-6 bottom-6">
       <p class="text-font-secondary">
         {{ formatDate(project.startDate) }} -
@@ -41,7 +48,7 @@ const props = defineProps<{
 
 const isLoading = ref<boolean>(true)
 
-const imgUrl = new URL(`../assets/img/${props.project.img}`, import.meta.url).href
+const imgUrl = new URL(`../../public/${props.project.img}`, import.meta.url).href
 
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('de-DE', {

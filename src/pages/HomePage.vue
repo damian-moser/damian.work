@@ -95,7 +95,7 @@
 </template>
 <script lang="ts" setup>
 import { useUserStore } from '@/stores/user.store'
-import { computed, defineAsyncComponent } from 'vue'
+import { computed, defineAsyncComponent, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const DaHeader = defineAsyncComponent(() => import('../components/DaHeader.vue'))
@@ -110,6 +110,18 @@ const userStore = useUserStore()
 
 const isImprintOpen = computed(() => route.query.isImprintOpen)
 const isPrivacyPolicyOpen = computed(() => route.query.isPrivacyPolicyOpen)
+
+const hideBodyScrollbar = (hide: boolean) => {
+  document.body.style.overflowY = hide ? 'hidden' : 'scroll'
+}
+
+watch(isImprintOpen, (value) => hideBodyScrollbar(!!value))
+
+watch(isPrivacyPolicyOpen, (value) => hideBodyScrollbar(!!value))
+
+onMounted(() => {
+  hideBodyScrollbar(!!isImprintOpen.value || !!isPrivacyPolicyOpen.value)
+})
 </script>
 <style scoped>
 .mobile-active div:first-child {

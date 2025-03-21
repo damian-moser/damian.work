@@ -1,7 +1,7 @@
 <template>
   <section id="projekte" class="py-24">
     <h1 class="text-xl mb-8 animate-fade-in-left-slow">Projekte</h1>
-    <ul class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <ul class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <li
         v-for="(project, index) in projects"
         :key="project.link"
@@ -27,8 +27,17 @@ const projects: Project[] = [
     label: 'Gemeinde Wachseldorn',
     link: 'https://wachseldorn.ch',
     img: 'wachseldorn.jpg',
+    position: 'right',
     startDate: new Date(2023, 10, 21),
     endDate: new Date(2024, 1, 17)
+  },
+  {
+    label: 'Sandra Leuenberger',
+    link: 'https://sandra-leuenberger.ch/',
+    img: 'sandra-leuenberger.jpg',
+    position: 'center',
+    startDate: new Date(2024, 11, 1),
+    endDate: new Date(2025, 2, 21)
   }
 ]
 </script>
