@@ -37,7 +37,7 @@ const projects: Project[] = [
     img: 'sandra-leuenberger.jpg',
     position: 'center',
     startDate: new Date(2024, 11, 1),
-    endDate: new Date(2025, 2, 21)
+    endDate: new Date(2025, 3, 2)
   }
 ]
 </script>
