@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-screen max-w-full min-h-screen flex justify-center px-8 overflow-x-hidden bg-bg dark:bg-bg-dark"
+    class="w-screen max-w-full min-h-screen flex justify-center px-4 overflow-x-hidden bg-bg dark:bg-bg-dark md:px-8"
   >
     <DaHeader />
     <main class="max-w-size w-size">

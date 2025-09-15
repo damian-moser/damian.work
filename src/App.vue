@@ -1,17 +1,30 @@
 <template>
   <RouterView />
+  <div ref="appCursor" id="app-cursor"></div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, toRefs } from 'vue'
+import { onBeforeUnmount, onMounted, ref, toRefs } from 'vue'
 import { RouterView } from 'vue-router'
 import { useUserStore } from './stores/user.store'
 
 const userStore = useUserStore()
 const { isDarkModeActive } = toRefs(userStore)
 
+const appCursor = ref<HTMLDivElement | null>()
+
+const handleMouseMove = (e: MouseEvent) => {
+  if (appCursor.value)
+    appCursor.value.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`
+}
+
 onMounted(() => {
   document.documentElement.classList.add(isDarkModeActive.value ? 'dark' : 'light')
+  document.addEventListener('mousemove', handleMouseMove)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('mousemove', handleMouseMove)
 })
 </script>
 

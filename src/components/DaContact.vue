@@ -20,7 +20,7 @@
         <section>
           <h1 class="text-sm !text-primary mb-4">Kontakt</h1>
           <div class="flex flex-col gap-4">
-            <div class="flex gap-4">
+            <div class="flex gap-4 sm:flex-row flex-col">
               <DaInput v-model="forename" placeholder="Vorname" />
               <DaInput v-model="surname" placeholder="Nachname" />
             </div>
