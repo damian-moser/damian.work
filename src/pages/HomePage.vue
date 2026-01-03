@@ -119,8 +119,21 @@ watch(isImprintOpen, (value) => hideBodyScrollbar(!!value))
 
 watch(isPrivacyPolicyOpen, (value) => hideBodyScrollbar(!!value))
 
-onMounted(() => {
+onMounted(async () => {
   hideBodyScrollbar(!!isImprintOpen.value || !!isPrivacyPolicyOpen.value)
+
+  if (route.hash) {
+    const scrollToHash = () => {
+      const el = document.querySelector(route.hash)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      } else {
+        setTimeout(scrollToHash, 50)
+      }
+    }
+
+    scrollToHash()
+  }
 })
 </script>
 <style scoped>
