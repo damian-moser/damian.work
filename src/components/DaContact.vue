@@ -93,9 +93,7 @@
             Datenschutzerklärung
           </small>
         </div>
-        <a href="https://damian.work" target="_blank" class="font-bold text-xs !text-primary"
-          >by damian.work</a
-        >
+        <p class="font-bold text-xs !text-primary">by damian.work</p>
       </div>
     </div>
     <DaPopup

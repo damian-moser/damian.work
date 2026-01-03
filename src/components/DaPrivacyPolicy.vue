@@ -13,9 +13,8 @@
       <div>
         <h2>2. Verantwortliche Stelle</h2>
         <p>
-          Verantwortliche Stelle im Sinne der Datenschutzgesetze ist Damian Moser, Ottisbergstrasse
-          33, 3186 Düdingen, Schweiz. Bei Fragen zum Datenschutz können Sie uns unter
-          hello@damian.work erreichen.
+          Verantwortliche Stelle im Sinne der Datenschutzgesetze ist Damian Moser. Bei Fragen zum
+          Datenschutz können Sie uns unter hello@damian.work erreichen.
         </p>
       </div>
 

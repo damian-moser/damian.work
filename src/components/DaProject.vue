@@ -22,10 +22,6 @@
 
     <div class="absolute inset-0 bg-black bg-opacity-25"></div>
     <div class="absolute left-6 bottom-6">
-      <p class="text-font-secondary">
-        {{ formatDate(project.startDate) }} -
-        {{ formatDate(project.endDate) }}
-      </p>
       <h2 class="text-xl mb-2 text-font-secondary">{{ project.label }}</h2>
       <a :href="project.link" target="_blank" rel="noopener" class="btn">
         <div class="flex items-center gap-2">
@@ -49,12 +45,4 @@ const props = defineProps<{
 const isLoading = ref<boolean>(true)
 
 const imgUrl = new URL(`../../public/${props.project.img}`, import.meta.url).href
-
-const formatDate = (date: Date) => {
-  return date.toLocaleDateString('de-DE', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric'
-  })
-}
 </script>

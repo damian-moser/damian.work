@@ -27,17 +27,13 @@ const projects: Project[] = [
     label: 'Gemeinde Wachseldorn',
     link: 'https://wachseldorn.ch',
     img: 'wachseldorn.jpg',
-    position: 'right',
-    startDate: new Date(2023, 10, 21),
-    endDate: new Date(2024, 1, 17)
+    position: 'right'
   },
   {
     label: 'Sandra Leuenberger',
     link: 'https://sandra-leuenberger.ch/',
     img: 'sandra-leuenberger.jpg',
-    position: 'center',
-    startDate: new Date(2024, 11, 1),
-    endDate: new Date(2025, 3, 2)
+    position: 'center'
   }
 ]
 </script>

@@ -3,6 +3,4 @@ export type Project = {
   link: string
   img: string
   position: string
-  startDate: Date
-  endDate: Date
 }
