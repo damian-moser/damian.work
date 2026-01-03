@@ -95,7 +95,7 @@
 </template>
 <script lang="ts" setup>
 import { useUserStore } from '@/stores/user.store'
-import { computed, defineAsyncComponent, onMounted, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onMounted, watch, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 
 const DaHeader = defineAsyncComponent(() => import('../components/DaHeader.vue'))
@@ -119,21 +119,33 @@ watch(isImprintOpen, (value) => hideBodyScrollbar(!!value))
 
 watch(isPrivacyPolicyOpen, (value) => hideBodyScrollbar(!!value))
 
-onMounted(async () => {
-  hideBodyScrollbar(!!isImprintOpen.value || !!isPrivacyPolicyOpen.value)
-
-  if (route.hash) {
-    const scrollToHash = () => {
-      const el = document.querySelector(route.hash)
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
-      } else {
-        setTimeout(scrollToHash, 50)
-      }
+const scrollToHash = async (hash: string) => {
+  for (let i = 0; i < 40; i++) {
+    await nextTick()
+    const el = document.querySelector(hash)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      return
     }
-
-    scrollToHash()
+    await new Promise((r) => setTimeout(r, 50))
   }
+}
+
+const clickHandler = (e: any) => {
+  const link = e.target.closest('a[href^="#"]')
+  if (!link) return
+  e.preventDefault()
+  scrollToHash(link.getAttribute('href'))
+  history.replaceState(null, '', link.getAttribute('href'))
+}
+
+watchEffect(() => {
+  if (route.hash) scrollToHash(route.hash)
+})
+
+onMounted(() => {
+  document.body.addEventListener('click', clickHandler)
+  hideBodyScrollbar(!!isImprintOpen.value || !!isPrivacyPolicyOpen.value)
 })
 </script>
 <style scoped>
